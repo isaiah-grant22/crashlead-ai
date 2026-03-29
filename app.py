@@ -6,13 +6,7 @@ from streamlit_folium import st_folium
 from shapely.geometry import Point
 from datetime import datetime
 
-from data_fetcher import (
-    get_all_opd_crashes,
-    get_nhtsa_fatals,
-    get_california_ccrs_crashes,
-    get_florida_fdot_crashes,
-    get_austin_tx_crashes,
-)
+from data_fetcher import fetch_all_crashes
 from utils import filter_by_radius, simple_lead_score
 from ai_summarizer import grok_crash_summary
 from stripe_service import create_checkout_session
@@ -28,31 +22,19 @@ st.title("🚨 CrashLead AI v3.2 — Nationwide Attorney Leads")
 # ---------------------------------------------------------------------------
 st.sidebar.header("🌎 Coverage")
 
-if st.sidebar.button("🚀 MAXIMUM COVERAGE (All States + CA + FL + Austin TX)"):
-    include_ca = include_fl = include_tx = True
-else:
-    include_ca = st.sidebar.checkbox("California CCRS", value=True)
-    include_fl = st.sidebar.checkbox("Florida FDOT", value=True)
-    include_tx = st.sidebar.checkbox("Austin TX", value=True)
+include_tx = st.sidebar.checkbox("Austin TX (Live)", value=True)
 
 days = st.sidebar.slider("Days back", 7, 90, 30)
-radius_km = st.sidebar.slider("Radius (miles)", 20, 500, 80)
+radius_km = st.sidebar.slider("Radius (miles)", 20, 5000, 500)
 center_lat = st.sidebar.number_input("Center Latitude", value=41.1589)
 center_lon = st.sidebar.number_input("Center Longitude", value=-85.4883)
-min_score = st.sidebar.slider("Min lead score", 0, 100, 50)
+min_score = st.sidebar.slider("Min lead score", 0, 100, 0)
 
 # ---------------------------------------------------------------------------
 # Fetch data
 # ---------------------------------------------------------------------------
 with st.spinner("Fetching nationwide crashes..."):
-    df_list = [get_all_opd_crashes(days), get_nhtsa_fatals()]
-    if include_ca:
-        df_list.append(get_california_ccrs_crashes(days))
-    if include_fl:
-        df_list.append(get_florida_fdot_crashes(days))
-    if include_tx:
-        df_list.append(get_austin_tx_crashes(days))
-    df = pd.concat(df_list, ignore_index=True)
+    df = fetch_all_crashes(days_back=days, include_austin=include_tx)
 
 # ---------------------------------------------------------------------------
 # Filter & score

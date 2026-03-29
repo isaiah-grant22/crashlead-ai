@@ -1,0 +1,42 @@
+version: "3.9"
+
+services:
+  # ---------- Postgres database ----------
+  db:
+    image: postgres:16-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: crashlead
+      POSTGRES_PASSWORD: crashlead
+      POSTGRES_DB: crashlead
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U crashlead"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # ---------- FastAPI backend ----------
+  backend:
+    build:
+      context: ../          # project root so data_fetcher.py etc. are available
+      dockerfile: production/Dockerfile
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+    environment:
+      DATABASE_URL: postgresql://crashlead:crashlead@db:5432/crashlead
+      GROK_API_KEY: ${GROK_API_KEY}
+      STRIPE_SECRET_KEY: ${STRIPE_SECRET_KEY}
+      STRIPE_WEBHOOK_SECRET: ${STRIPE_WEBHOOK_SECRET}
+    volumes:
+      - ../:/app            # live-reload during development
+
+volumes:
+  pgdata:

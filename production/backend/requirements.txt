@@ -1,0 +1,13 @@
+fastapi
+uvicorn[standard]
+sqlalchemy
+psycopg2-binary
+apscheduler
+pandas
+geopandas
+shapely
+requests
+httpx
+python-dotenv
+stripe
+openpolicedata

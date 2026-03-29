@@ -1,0 +1,16 @@
+streamlit
+openpolicedata
+pandas
+geopandas
+shapely
+folium
+streamlit-folium
+requests
+python-dotenv
+stripe
+httpx
+apscheduler
+fastapi
+uvicorn
+sqlalchemy
+psycopg2-binary

@@ -1,5 +1,4 @@
 streamlit
-openpolicedata
 pandas
 geopandas
 shapely
@@ -9,8 +8,3 @@ requests
 python-dotenv
 stripe
 httpx
-apscheduler
-fastapi
-uvicorn
-sqlalchemy
-psycopg2-binary

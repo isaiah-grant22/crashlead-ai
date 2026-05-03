@@ -1,0 +1,684 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Good Old Boat 2.0 — the modern home for owners of older fiberglass sailboats. Restoration, seamanship, and the craft of sailing the boat you've already got." />
+<title>Good Old Boat 2.0 — For the Sailors Who Love the Boats They Own.</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700;9..144,800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<!-- ──────────────────  NAV  ────────────────── -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand" aria-label="Good Old Boat 2.0, home">
+    <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+      <!-- compass + sail mark -->
+      <circle cx="18" cy="18" r="15" fill="none" stroke="currentColor" stroke-width="1.4"/>
+      <path d="M18 6 L18 30" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+      <path d="M6 18 L30 18" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+      <path d="M18 8 L26 26 L10 26 Z" fill="currentColor" opacity="0.85"/>
+    </svg>
+    <span class="brand-text">
+      Good Old Boat
+      <em class="brand-ver">2.0</em>
+    </span>
+  </a>
+  <nav class="nav-links" aria-label="Primary">
+    <a href="#learn">Learn</a>
+    <a href="#points-of-sail">Points of Sail</a>
+    <a href="#anatomy">Boat Anatomy</a>
+    <a href="#library">Library</a>
+    <a href="#glossary">Glossary</a>
+    <a href="#community">Community</a>
+  </nav>
+  <div class="nav-actions">
+    <button class="btn btn-ghost" id="searchBtn" aria-label="Search the site">
+      <svg viewBox="0 0 20 20" width="16" height="16" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 14 L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <span>Search</span>
+      <kbd>⌘K</kbd>
+    </button>
+    <a href="#join" class="btn btn-primary">Subscribe</a>
+  </div>
+</header>
+
+<!-- ──────────────────  HERO  ────────────────── -->
+<section class="hero" id="top">
+  <div class="hero-bg" aria-hidden="true">
+    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+      <defs>
+        <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"  stop-color="#0a1f3a"/>
+          <stop offset="55%" stop-color="#13385f"/>
+          <stop offset="100%" stop-color="#1d567f"/>
+        </linearGradient>
+        <linearGradient id="sea" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#0a2540" stop-opacity="0"/>
+          <stop offset="100%" stop-color="#04101e"/>
+        </linearGradient>
+        <radialGradient id="sun" cx="78%" cy="32%" r="20%">
+          <stop offset="0%" stop-color="#f7d9a1" stop-opacity="0.55"/>
+          <stop offset="100%" stop-color="#f7d9a1" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <rect width="1440" height="900" fill="url(#sky)"/>
+      <rect width="1440" height="900" fill="url(#sun)"/>
+      <rect y="540" width="1440" height="360" fill="#0a2540" opacity="0.85"/>
+      <path d="M0 555 Q200 530 400 548 T800 555 T1200 545 T1440 552 L1440 580 L0 580 Z" fill="#0a1f3a" opacity="0.7"/>
+      <g class="waves" stroke="#a4d4ce" stroke-width="0.6" fill="none" opacity="0.18">
+        <path d="M0 620 Q120 612 240 620 T480 620 T720 620 T960 620 T1200 620 T1440 620"/>
+        <path d="M0 660 Q120 652 240 660 T480 660 T720 660 T960 660 T1200 660 T1440 660"/>
+        <path d="M0 700 Q120 692 240 700 T480 700 T720 700 T960 700 T1200 700 T1440 700"/>
+        <path d="M0 740 Q120 732 240 740 T480 740 T720 740 T960 740 T1200 740 T1440 740"/>
+        <path d="M0 780 Q120 772 240 780 T480 780 T720 780 T960 780 T1200 780 T1440 780"/>
+        <path d="M0 820 Q120 812 240 820 T480 820 T720 820 T960 820 T1200 820 T1440 820"/>
+      </g>
+      <rect y="540" width="1440" height="360" fill="url(#sea)"/>
+
+      <!-- distant sailboat -->
+      <g transform="translate(1080 470)" opacity="0.85">
+        <path d="M0 60 L0 -40 Z" stroke="#f5f1e8" stroke-width="1"/>
+        <path d="M0 -38 L0 55 L48 55 Z" fill="#f5f1e8" opacity="0.92"/>
+        <path d="M0 -38 L-30 55 L0 55 Z" fill="#e8dec7" opacity="0.85"/>
+        <path d="M-32 60 Q0 70 56 60 L48 70 Q0 78 -32 70 Z" fill="#1a1a1a"/>
+      </g>
+      <!-- foreground sailboat — a classic fiberglass cruiser, of course -->
+      <g transform="translate(310 525)">
+        <line x1="0" y1="-220" x2="0" y2="80" stroke="#1a1a1a" stroke-width="2.5"/>
+        <path d="M0 -218 L0 55 L150 55 Z" fill="#f5f1e8"/>
+        <path d="M0 -210 L-110 55 L0 55 Z" fill="#ece2c9"/>
+        <path d="M0 -160 L130 55" stroke="#d8cfb7" stroke-width="0.6" opacity="0.6"/>
+        <path d="M0 -100 L142 55" stroke="#d8cfb7" stroke-width="0.6" opacity="0.6"/>
+        <path d="M0 -40  L150 55" stroke="#d8cfb7" stroke-width="0.6" opacity="0.6"/>
+        <path d="M-130 75 Q0 95 175 75 L160 92 Q0 108 -120 92 Z" fill="#0a1f3a" stroke="#c9a961" stroke-width="0.8"/>
+        <ellipse cx="20" cy="100" rx="170" ry="6" fill="#a4d4ce" opacity="0.18"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-inner">
+    <span class="kicker">Est. 1998 · Reborn 2026 · For the sailors who love the boats they own</span>
+    <h1>
+      A good old boat<br/>
+      is still the best boat.<br/>
+      <em>We just made the magazine new.</em>
+    </h1>
+    <p class="lede">
+      Good Old Boat 2.0 is the modern continuation of the magazine generations of sailors grew up with —
+      built for owners of older fiberglass cruisers who'd rather refit than replace.
+      Interactive lessons, deep restoration journals, and a community that has actually pulled the engine.
+    </p>
+    <div class="hero-cta">
+      <a href="#learn" class="btn btn-primary btn-lg">Start with the basics <span aria-hidden="true">→</span></a>
+      <a href="#points-of-sail" class="btn btn-outline btn-lg">Try a lesson</a>
+    </div>
+    <ul class="hero-meta">
+      <li><strong>180+</strong> lessons</li>
+      <li><strong>40+</strong> refit journals</li>
+      <li><strong>900+</strong> glossary terms</li>
+      <li><strong>14k</strong> sailors aboard</li>
+    </ul>
+  </div>
+
+  <a href="#learn" class="hero-scroll" aria-label="Scroll to learning paths">
+    <span></span>
+  </a>
+</section>
+
+<!-- ──────────────────  WHAT'S NEW IN 2.0  ────────────────── -->
+<section class="section section--strap">
+  <div class="strap">
+    <div><span class="strap-num">01</span><h4>Everything from the archive.</h4><p>Two decades of articles, indexed, searchable, and rewritten for the screen — without losing a comma of the original voice.</p></div>
+    <div><span class="strap-num">02</span><h4>Lessons that move.</h4><p>Diagrams you can hover, knots you can drag, and a points-of-sail you can actually feel. The bookshelf grew up.</p></div>
+    <div><span class="strap-num">03</span><h4>The community is real.</h4><p>Moderated, name-attached, no sponsored noise. The dock conversation, finally portable.</p></div>
+  </div>
+</section>
+
+<!-- ──────────────────  LEARNING PATHS  ────────────────── -->
+<section class="section" id="learn">
+  <div class="section-head">
+    <span class="eyebrow">Learning paths</span>
+    <h2>From the dock to the open ocean.</h2>
+    <p>Four paths, structured the way sailors actually grow. Pick where you are. Each lesson is built around the question <em>“why does the boat do that?”</em> — not a checklist.</p>
+  </div>
+
+  <div class="paths">
+    <article class="path path--a">
+      <header>
+        <span class="path-num">01</span>
+        <span class="path-tag">Foundations</span>
+      </header>
+      <h3>The First Sail</h3>
+      <p>Wind, water, and the language of a sailboat. By the end you can rig a small boat, leave a dock, sail a triangle, and come home — without help.</p>
+      <ul class="path-list">
+        <li>How a sail actually works (it's not a parachute)</li>
+        <li>Reading the wind on the water</li>
+        <li>The five points of sail, by feel</li>
+        <li>Tacking, gybing, heaving-to</li>
+        <li>Knots that earn their keep</li>
+      </ul>
+      <footer>
+        <span>12 lessons · 4 hrs</span>
+        <a href="#" class="link-arrow">Begin →</a>
+      </footer>
+    </article>
+
+    <article class="path path--b">
+      <header>
+        <span class="path-num">02</span>
+        <span class="path-tag">Coastal</span>
+      </header>
+      <h3>Coastal Cruiser</h3>
+      <p>You can sail a boat. Now learn to take one somewhere. Pilotage, anchoring, weather, and the judgment that keeps a weekend trip from becoming a story.</p>
+      <ul class="path-list">
+        <li>Chartwork & electronic navigation, side by side</li>
+        <li>Reading a real marine forecast</li>
+        <li>Anchoring that holds in the night</li>
+        <li>Docking under sail and under power</li>
+        <li>Engine basics for sailors who'd rather not</li>
+      </ul>
+      <footer>
+        <span>22 lessons · 9 hrs</span>
+        <a href="#" class="link-arrow">Begin →</a>
+      </footer>
+    </article>
+
+    <article class="path path--c">
+      <header>
+        <span class="path-num">03</span>
+        <span class="path-tag">Bluewater</span>
+      </header>
+      <h3>The Long Passage</h3>
+      <p>What changes when the coast goes away. Watch systems, heavy weather tactics, celestial as a backup, and the small disciplines that keep a crew alive and sane.</p>
+      <ul class="path-list">
+        <li>Storm tactics: heave-to, fore-reach, run-off, drogues</li>
+        <li>Watch systems that don't break a crew</li>
+        <li>Provisioning & water for two weeks at sea</li>
+        <li>Celestial nav as a real backup</li>
+        <li>Medical at sea: when help is 4 days away</li>
+      </ul>
+      <footer>
+        <span>34 lessons · 18 hrs</span>
+        <a href="#" class="link-arrow">Begin →</a>
+      </footer>
+    </article>
+
+    <article class="path path--d">
+      <header>
+        <span class="path-num">04</span>
+        <span class="path-tag">The boat itself</span>
+      </header>
+      <h3>Restoration & Refit</h3>
+      <p>The original Good Old Boat promise — kept, and modernized. The deep mechanical knowledge that turns a $5,000 hull into a boat you'd cross an ocean in.</p>
+      <ul class="path-list">
+        <li>Surveying a 30-year-old hull, honestly</li>
+        <li>Diesel: what it is actually doing under there</li>
+        <li>Standing rigging: when to inspect, when to replace</li>
+        <li>Marine electrical from scratch</li>
+        <li>Teak, gelcoat, and the war against water</li>
+      </ul>
+      <footer>
+        <span>40+ guides · ongoing</span>
+        <a href="#" class="link-arrow">Begin →</a>
+      </footer>
+    </article>
+  </div>
+</section>
+
+<!-- ──────────────────  POINTS OF SAIL — INTERACTIVE  ────────────────── -->
+<section class="section section--dark" id="points-of-sail">
+  <div class="section-head">
+    <span class="eyebrow">Lesson preview · Foundations 03</span>
+    <h2>The five points of sail.</h2>
+    <p>Most diagrams of this are wrong, or at least useless. Click any boat to feel where the wind is and what the sails should be doing. The compass below shows true wind from the top.</p>
+  </div>
+
+  <div class="pos-wrap">
+    <div class="pos-stage">
+      <svg viewBox="0 0 600 600" class="pos-svg" role="img" aria-label="Points of sail diagram">
+        <defs>
+          <radialGradient id="posBg" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#143557"/>
+            <stop offset="100%" stop-color="#0a1f3a"/>
+          </radialGradient>
+        </defs>
+
+        <circle cx="300" cy="300" r="260" fill="url(#posBg)" stroke="#234c75" stroke-width="1"/>
+        <circle cx="300" cy="300" r="200" fill="none" stroke="#234c75" stroke-width="0.6" stroke-dasharray="2 4"/>
+        <circle cx="300" cy="300" r="140" fill="none" stroke="#234c75" stroke-width="0.6" stroke-dasharray="2 4"/>
+
+        <!-- no-go zone -->
+        <path d="M300 300 L208 80 A237 237 0 0 1 392 80 Z" fill="#c9a961" opacity="0.10"/>
+        <text x="300" y="120" text-anchor="middle" fill="#c9a961" font-size="13" font-family="Fraunces, serif" font-style="italic" opacity="0.85">no-go zone</text>
+
+        <!-- wind arrow at top -->
+        <g class="wind-arrow">
+          <line x1="300" y1="20" x2="300" y2="70" stroke="#a4d4ce" stroke-width="2"/>
+          <path d="M292 60 L300 75 L308 60 Z" fill="#a4d4ce"/>
+          <text x="300" y="12" text-anchor="middle" fill="#a4d4ce" font-size="12" font-family="Inter">TRUE WIND</text>
+        </g>
+
+        <text x="300" y="565" text-anchor="middle" fill="#7995b5" font-size="11" font-family="Inter">DOWNWIND</text>
+
+        <!-- POSITION DOTS — clickable -->
+        <g id="posDots">
+          <g class="pos-dot" data-pos="irons" tabindex="0">
+            <circle cx="300" cy="100" r="22" />
+            <text x="300" y="105" text-anchor="middle">⚓</text>
+          </g>
+          <g class="pos-dot" data-pos="close" tabindex="0">
+            <circle cx="160" cy="160" r="22" />
+            <text x="160" y="165" text-anchor="middle">▲</text>
+          </g>
+          <g class="pos-dot" data-pos="close" tabindex="0">
+            <circle cx="440" cy="160" r="22" />
+            <text x="440" y="165" text-anchor="middle">▲</text>
+          </g>
+          <g class="pos-dot" data-pos="beam" tabindex="0">
+            <circle cx="80" cy="300" r="22" />
+            <text x="80" y="305" text-anchor="middle">▶</text>
+          </g>
+          <g class="pos-dot" data-pos="beam" tabindex="0">
+            <circle cx="520" cy="300" r="22" />
+            <text x="520" y="305" text-anchor="middle">◀</text>
+          </g>
+          <g class="pos-dot" data-pos="broad" tabindex="0">
+            <circle cx="160" cy="440" r="22" />
+            <text x="160" y="445" text-anchor="middle">▼</text>
+          </g>
+          <g class="pos-dot" data-pos="broad" tabindex="0">
+            <circle cx="440" cy="440" r="22" />
+            <text x="440" y="445" text-anchor="middle">▼</text>
+          </g>
+          <g class="pos-dot" data-pos="run" tabindex="0">
+            <circle cx="300" cy="500" r="22" />
+            <text x="300" y="505" text-anchor="middle">▼</text>
+          </g>
+        </g>
+
+        <!-- center boat — rotates -->
+        <g id="posBoat" transform="translate(300 300)">
+          <ellipse cx="0" cy="0" rx="22" ry="60" fill="#f5f1e8" stroke="#0a1f3a" stroke-width="1.2"/>
+          <line x1="0" y1="-55" x2="0" y2="55" stroke="#0a1f3a" stroke-width="0.8"/>
+          <circle cx="0" cy="-10" r="3" fill="#0a1f3a"/>
+          <path id="posSail" d="M0 -10 Q-30 20 -8 50 Z" fill="#a4d4ce" opacity="0.9" stroke="#0a1f3a" stroke-width="0.8"/>
+        </g>
+      </svg>
+    </div>
+
+    <aside class="pos-card" id="posCard" data-pos="beam">
+      <span class="pos-card-tag" id="posTag">BEAM REACH</span>
+      <h3 id="posTitle">Beam reach</h3>
+      <p id="posBlurb">The wind is on the side of the boat — 90° off the bow. For most cruising sailboats this is the fastest, smoothest, easiest point of sail. Sails out to about half. The boat heels just enough to feel alive.</p>
+      <dl class="pos-stats">
+        <div><dt>Wind angle</dt><dd id="posAngle">~90° off bow</dd></div>
+        <div><dt>Sail trim</dt><dd id="posTrim">Half eased</dd></div>
+        <div><dt>Speed</dt><dd id="posSpeed">Fast & balanced</dd></div>
+        <div><dt>Watch out for</dt><dd id="posWarn">Gusts heel you quickly</dd></div>
+      </dl>
+      <p class="pos-hint">Click any dot on the diagram. Use ←/→ to step around the wind.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ──────────────────  BOAT ANATOMY  ────────────────── -->
+<section class="section" id="anatomy">
+  <div class="section-head">
+    <span class="eyebrow">Lesson preview · Foundations 01</span>
+    <h2>Know the parts. Speak the language.</h2>
+    <p>A sailboat has its own vocabulary because the words are <em>useful</em> — “the line on the right side of the boat” gets people hurt. Hover anything labeled to learn it.</p>
+  </div>
+
+  <div class="anatomy">
+    <svg viewBox="0 0 900 520" class="anatomy-svg" role="img" aria-label="Sailboat anatomy">
+      <path d="M0 380 Q150 372 300 380 T600 380 T900 380 L900 520 L0 520 Z" fill="#13385f"/>
+      <path d="M0 380 Q150 372 300 380 T600 380 T900 380" stroke="#a4d4ce" stroke-width="0.6" fill="none" opacity="0.5"/>
+
+      <path d="M120 360 Q450 410 780 360 L740 395 Q450 430 160 395 Z" fill="#0a1f3a" stroke="#c9a961" stroke-width="1.2"/>
+      <path d="M150 380 Q450 410 750 380" stroke="#c9a961" stroke-width="1" fill="none" opacity="0.7"/>
+      <path d="M300 360 L320 320 L560 320 L580 360 Z" fill="#13385f" stroke="#c9a961" stroke-width="0.8"/>
+      <circle cx="360" cy="340" r="6" fill="#a4d4ce" opacity="0.6"/>
+      <circle cx="400" cy="340" r="6" fill="#a4d4ce" opacity="0.6"/>
+      <circle cx="480" cy="340" r="6" fill="#a4d4ce" opacity="0.6"/>
+      <circle cx="520" cy="340" r="6" fill="#a4d4ce" opacity="0.6"/>
+      <path d="M580 360 L700 360 L690 380 L620 380 Z" fill="#0a1325" stroke="#c9a961" stroke-width="0.6"/>
+      <path d="M780 360 L772 388" stroke="#c9a961" stroke-width="0.8"/>
+      <path d="M380 425 L420 510 L520 510 L560 425 Z" fill="#0a1325" stroke="#c9a961" stroke-width="0.8"/>
+      <path d="M735 395 L735 470 L755 470 L755 395 Z" fill="#0a1325" stroke="#c9a961" stroke-width="0.6"/>
+
+      <line x1="430" y1="320" x2="430" y2="40" stroke="#1a1a1a" stroke-width="3"/>
+      <line x1="430" y1="305" x2="660" y2="305" stroke="#1a1a1a" stroke-width="3"/>
+      <path d="M430 50 L430 305 L655 305 Z" fill="#f5f1e8" stroke="#0a1f3a" stroke-width="0.8"/>
+      <path d="M430 110 L640 305" stroke="#d8cfb7" stroke-width="0.6" opacity="0.7"/>
+      <path d="M430 180 L648 305" stroke="#d8cfb7" stroke-width="0.6" opacity="0.7"/>
+      <path d="M430 250 L654 305" stroke="#d8cfb7" stroke-width="0.6" opacity="0.7"/>
+      <path d="M430 80 L200 360 L430 360 Z" fill="#ece2c9" stroke="#0a1f3a" stroke-width="0.8" opacity="0.95"/>
+      <line x1="430" y1="50" x2="200" y2="360" stroke="#1a1a1a" stroke-width="0.6"/>
+      <line x1="430" y1="50" x2="780" y2="360" stroke="#1a1a1a" stroke-width="0.6"/>
+      <line x1="430" y1="120" x2="380" y2="320" stroke="#1a1a1a" stroke-width="0.6"/>
+      <line x1="430" y1="120" x2="480" y2="320" stroke="#1a1a1a" stroke-width="0.6"/>
+
+      <g class="hotspots">
+        <g class="spot" data-name="Mainsail" data-blurb="The big sail behind the mast. Drives the boat on most points of sail; trim it like a wing.">
+          <circle cx="535" cy="180" r="10"/><text x="535" y="184" text-anchor="middle">1</text>
+        </g>
+        <g class="spot" data-name="Jib / Headsail" data-blurb="The forward sail. On most modern rigs it's the engine — you're surprised how much of your speed comes from the small sail up front.">
+          <circle cx="320" cy="240" r="10"/><text x="320" y="244" text-anchor="middle">2</text>
+        </g>
+        <g class="spot" data-name="Mast" data-blurb="The vertical spar. Modern masts are aluminum extrusions; on a good old boat, the rigging holding it up is what you need to inspect — not the mast itself.">
+          <circle cx="430" cy="180" r="10"/><text x="430" y="184" text-anchor="middle">3</text>
+        </g>
+        <g class="spot" data-name="Boom" data-blurb="The horizontal spar at the foot of the mainsail. The reason 'boom' became a word for a sudden noise is because it can hit your head in an uncontrolled gybe.">
+          <circle cx="555" cy="305" r="10"/><text x="555" y="309" text-anchor="middle">4</text>
+        </g>
+        <g class="spot" data-name="Forestay" data-blurb="The wire from the bow to near the top of the mast. Holds the rig forward and is what the jib is hanked or furled onto.">
+          <circle cx="320" cy="195" r="10"/><text x="320" y="199" text-anchor="middle">5</text>
+        </g>
+        <g class="spot" data-name="Cockpit" data-blurb="Where you steer and where the working lines come back to. On a good cruising boat it is small enough to brace yourself in, big enough to nap in.">
+          <circle cx="650" cy="370" r="10"/><text x="650" y="374" text-anchor="middle">6</text>
+        </g>
+        <g class="spot" data-name="Keel" data-blurb="The fin underneath. It does two things: it stops the boat from sliding sideways, and the lead inside it is what stands the boat back up when wind heels her over.">
+          <circle cx="470" cy="475" r="10"/><text x="470" y="479" text-anchor="middle">7</text>
+        </g>
+        <g class="spot" data-name="Rudder" data-blurb="What actually steers the boat. The wheel or tiller in the cockpit just moves this. If you lose it offshore you have a very bad day — which is why we teach emergency steering.">
+          <circle cx="745" cy="435" r="10"/><text x="745" y="439" text-anchor="middle">8</text>
+        </g>
+        <g class="spot" data-name="Bow" data-blurb="The pointy end. Goes first, usually.">
+          <circle cx="155" cy="375" r="10"/><text x="155" y="379" text-anchor="middle">9</text>
+        </g>
+        <g class="spot" data-name="Stern" data-blurb="The other end. Where the engine exhaust comes out and the dinghy gets towed from.">
+          <circle cx="775" cy="375" r="10"/><text x="775" y="379" text-anchor="middle">10</text>
+        </g>
+      </g>
+    </svg>
+
+    <aside class="anatomy-card" id="anatomyCard">
+      <span class="anatomy-card-tag">Hover or tap a number</span>
+      <h3 id="anatomyTitle">A sailboat is just a few honest parts.</h3>
+      <p id="anatomyBlurb">Most of what makes a sailboat work is mechanical and visible. There are no hidden tricks. Move your cursor over any of the numbered dots to learn what that part does and why sailors call it what they do.</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ──────────────────  COURSE LIBRARY  ────────────────── -->
+<section class="section" id="library">
+  <div class="section-head">
+    <span class="eyebrow">From the library</span>
+    <h2>Lessons sailors actually finish.</h2>
+    <p>Short, illustrated, and built to be read in a marina with bad wifi. New material every week.</p>
+  </div>
+
+  <div class="lib-grid">
+    <article class="lib-card">
+      <div class="lib-thumb lib-thumb--reef"></div>
+      <span class="lib-tag">Heavy weather</span>
+      <h3>How to reef before you wish you had.</h3>
+      <p>The single most-asked question from new cruisers, answered with the rule of thumb that experienced sailors actually use.</p>
+      <footer><span>9 min read</span><span>·</span><span>Capt. M. Halloran</span></footer>
+    </article>
+
+    <article class="lib-card">
+      <div class="lib-thumb lib-thumb--anchor"></div>
+      <span class="lib-tag">Anchoring</span>
+      <h3>Why your anchor isn't holding (and it's not the anchor).</h3>
+      <p>Scope, set, and the small physical truth about how a hook actually grabs the bottom. With a calculator.</p>
+      <footer><span>12 min read</span><span>·</span><span>R. Singh</span></footer>
+    </article>
+
+    <article class="lib-card">
+      <div class="lib-thumb lib-thumb--diesel"></div>
+      <span class="lib-tag">Engine</span>
+      <h3>Bleed your diesel. It's not scary.</h3>
+      <p>A step-by-step that demystifies the one job that strands more cruisers than any other. With photos of an actual Yanmar 2GM.</p>
+      <footer><span>14 min read</span><span>·</span><span>D. Vélez</span></footer>
+    </article>
+
+    <article class="lib-card">
+      <div class="lib-thumb lib-thumb--knot"></div>
+      <span class="lib-tag">Foundations</span>
+      <h3>Six knots. That's actually it.</h3>
+      <p>Bowline, clove hitch, round turn & two half hitches, cleat hitch, figure-eight, rolling hitch. Animated. Looped. Ready.</p>
+      <footer><span>6 min · interactive</span><span>·</span><span>Editors</span></footer>
+    </article>
+
+    <article class="lib-card">
+      <div class="lib-thumb lib-thumb--weather"></div>
+      <span class="lib-tag">Weather</span>
+      <h3>Reading a real GRIB without lying to yourself.</h3>
+      <p>How to look at a model, see what it isn't telling you, and make a go/no-go call you can defend to your crew.</p>
+      <footer><span>18 min read</span><span>·</span><span>Capt. E. Lindqvist</span></footer>
+    </article>
+
+    <article class="lib-card">
+      <div class="lib-thumb lib-thumb--teak"></div>
+      <span class="lib-tag">Restoration</span>
+      <h3>Teak: maintain it, oil it, or let it go silver?</h3>
+      <p>The honest tradeoffs nobody explains. A 30-year-old deck after each strategy. Pick the one that matches your life.</p>
+      <footer><span>11 min read</span><span>·</span><span>S. Marek</span></footer>
+    </article>
+  </div>
+
+  <div class="lib-foot">
+    <a href="#" class="link-arrow">Browse the full library →</a>
+  </div>
+</section>
+
+<!-- ──────────────────  GLOSSARY  ────────────────── -->
+<section class="section section--cream" id="glossary">
+  <div class="section-head">
+    <span class="eyebrow">Reference</span>
+    <h2>The sailor's glossary.</h2>
+    <p>Every nautical word, defined the way a friend would define it on the dock. Type to search 900+ entries.</p>
+  </div>
+
+  <div class="glossary">
+    <div class="glossary-search">
+      <svg viewBox="0 0 20 20" width="18" height="18" aria-hidden="true"><circle cx="9" cy="9" r="6" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M14 14 L18 18" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+      <input id="glossaryInput" type="search" placeholder="Try “luff”, “telltale”, “gybe”…" autocomplete="off" />
+      <span class="glossary-count" id="glossaryCount">12 of 12</span>
+    </div>
+
+    <ul class="glossary-list" id="glossaryList">
+      <li><dfn>Abaft</dfn><span>Behind. “Abaft the mast” means the rear half of the boat. From an old word that just meant ‘at the back’.</span></li>
+      <li><dfn>Bear away</dfn><span>To turn the bow away from the wind. The opposite of <em>head up</em>. The boat will speed up and flatten out.</span></li>
+      <li><dfn>Bowline</dfn><span>The fixed-loop knot every sailor learns first. Won't slip, won't jam, no matter how much load you put on it.</span></li>
+      <li><dfn>Cleat</dfn><span>The two-horned metal fitting you tie a line to. Also the verb: <em>cleat off the halyard</em>.</span></li>
+      <li><dfn>Gybe (jibe)</dfn><span>To turn the stern through the wind so the sail crosses to the other side. Controlled, it's elegant. Uncontrolled, it can break a rig.</span></li>
+      <li><dfn>Halyard</dfn><span>A line that hoists a sail. There's one for the mainsail, one for the jib, and usually a spare.</span></li>
+      <li><dfn>Heave-to</dfn><span>A way of parking a sailboat at sea by backing the jib against a slightly trimmed main. Survives weather you wouldn't believe.</span></li>
+      <li><dfn>Luff</dfn><span>(noun) The leading edge of the sail. (verb) What the sail does when it starts to flap because you're pointing too high.</span></li>
+      <li><dfn>Painter</dfn><span>The line at the bow of a dinghy used to tie it up or tow it.</span></li>
+      <li><dfn>Sheet</dfn><span>The line that controls the trim of a sail. Mainsheet, jibsheet. Confusingly, never the sail itself.</span></li>
+      <li><dfn>Telltales</dfn><span>Little ribbons of yarn on the sail that tell you, instantly, whether the air is flowing right. The single best teacher of sail trim ever invented.</span></li>
+      <li><dfn>Windward</dfn><span>The side toward the wind. The opposite is <em>leeward</em>. You sit on the windward side because the boat heels to leeward.</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ──────────────────  RESTORATION FEATURE  ────────────────── -->
+<section class="section section--feature" id="restore">
+  <div class="feature">
+    <div class="feature-text">
+      <span class="eyebrow">A long read · The refit journals</span>
+      <h2>“The boat we paid $4,000 for. The two years that followed.”</h2>
+      <p>A complete refit, documented in 14 chapters. Survey to splash. Every receipt, every mistake, every part number. The piece we wish existed when we bought our first good old boat.</p>
+      <ul class="feature-points">
+        <li>1976 Tartan 30, hauled with a soft deck and a seized engine.</li>
+        <li>Honest budget: parts, tools, hours, marriage equity.</li>
+        <li>Includes the moment we almost gave up — and what changed.</li>
+      </ul>
+      <a href="#" class="btn btn-primary">Read the full series →</a>
+    </div>
+    <div class="feature-art" aria-hidden="true">
+      <svg viewBox="0 0 480 480">
+        <defs>
+          <linearGradient id="hullGrad" x1="0" x2="0" y1="0" y2="1">
+            <stop offset="0%"  stop-color="#f5f1e8"/>
+            <stop offset="100%" stop-color="#d8cfb7"/>
+          </linearGradient>
+        </defs>
+        <circle cx="240" cy="240" r="220" fill="#0a1f3a"/>
+        <circle cx="240" cy="240" r="220" fill="none" stroke="#c9a961" stroke-width="1" stroke-dasharray="3 6"/>
+        <g transform="translate(60 220)">
+          <path d="M0 60 Q180 110 360 60 L320 95 Q180 130 40 95 Z" fill="url(#hullGrad)" stroke="#c9a961" stroke-width="1.2"/>
+          <path d="M30 60 Q180 95 330 60" stroke="#c9a961" stroke-width="0.6" fill="none" opacity="0.5"/>
+          <path d="M150 60 L150 -60 L260 -60 L240 60 Z" fill="#13385f" stroke="#c9a961" stroke-width="0.8"/>
+          <line x1="200" y1="-60" x2="200" y2="-220" stroke="#1a1a1a" stroke-width="2"/>
+          <line x1="40" y1="100" x2="20" y2="180" stroke="#c9a961" stroke-width="1.2"/>
+          <line x1="60" y1="100" x2="60" y2="180" stroke="#c9a961" stroke-width="1.2"/>
+          <line x1="320" y1="100" x2="340" y2="180" stroke="#c9a961" stroke-width="1.2"/>
+          <line x1="300" y1="100" x2="300" y2="180" stroke="#c9a961" stroke-width="1.2"/>
+          <line x1="0" y1="180" x2="360" y2="180" stroke="#c9a961" stroke-width="0.6" opacity="0.7"/>
+        </g>
+        <text x="240" y="430" text-anchor="middle" fill="#c9a961" font-family="Fraunces, serif" font-style="italic" font-size="14">on the hard · winter '23</text>
+      </svg>
+    </div>
+  </div>
+</section>
+
+<!-- ──────────────────  COMMUNITY  ────────────────── -->
+<section class="section" id="community">
+  <div class="section-head">
+    <span class="eyebrow">Community</span>
+    <h2>The hard questions, answered by people who've been there.</h2>
+    <p>A small, moderated forum of ~14,000 sailors. No yelling, no “it depends”, no “do a search.” Real answers from cruisers, riggers, surveyors, and the occasional retired naval architect.</p>
+  </div>
+
+  <div class="forum">
+    <article class="thread">
+      <header>
+        <span class="thread-tag">Coastal</span>
+        <span class="thread-meta">42 replies · 4d ago</span>
+      </header>
+      <h3>Anchoring in 35 kts overnight in St. Augustine — what would you set?</h3>
+      <p>Forecast says 35 sustained, 45 in gusts, shifting NW to N. 12ft over hard sand and broken shell. CQR 35 lb, 60ft of 5/16 G4, 200ft rode. Send and pray, or move?</p>
+      <footer>
+        <span class="avatar avatar--a"></span>
+        <span>Started by <strong>seaduckSV</strong></span>
+        <span class="dot">·</span>
+        <span>Last reply by <strong>Capt. Halloran (verified)</strong></span>
+      </footer>
+    </article>
+
+    <article class="thread">
+      <header>
+        <span class="thread-tag">Restoration</span>
+        <span class="thread-meta">19 replies · 1d ago</span>
+      </header>
+      <h3>Soft spot under the mast step on a '78 Pearson 35 — repair vs. walk away?</h3>
+      <p>Deck is wet from the chainplate forward. Core is clearly compromised. I have the time. Do I have the boat?</p>
+      <footer>
+        <span class="avatar avatar--b"></span>
+        <span>Started by <strong>woodenshoe</strong></span>
+        <span class="dot">·</span>
+        <span>Last reply by <strong>S. Marek (Editor)</strong></span>
+      </footer>
+    </article>
+
+    <article class="thread">
+      <header>
+        <span class="thread-tag">Bluewater</span>
+        <span class="thread-meta">87 replies · 6h ago</span>
+      </header>
+      <h3>Honest watch schedule for a couple, 2-handed, Bermuda → Azores in June?</h3>
+      <p>3-on/3-off destroys us by day four. Tried 4/4 last year and made it but barely. What actually works for two people who like each other?</p>
+      <footer>
+        <span class="avatar avatar--c"></span>
+        <span>Started by <strong>svLittleWing</strong></span>
+        <span class="dot">·</span>
+        <span>Last reply by <strong>E. Lindqvist (Editor)</strong></span>
+      </footer>
+    </article>
+  </div>
+
+  <div class="lib-foot">
+    <a href="#" class="link-arrow">See all open threads →</a>
+  </div>
+</section>
+
+<!-- ──────────────────  JOIN / NEWSLETTER  ────────────────── -->
+<section class="section section--join" id="join">
+  <div class="join">
+    <div class="join-text">
+      <span class="eyebrow">The dispatch</span>
+      <h2>One thoughtful sailing letter, every Sunday.</h2>
+      <p>A long-read essay, three new lessons, and one piece of gear we actually use. No sponsored content, no “12 must-have items.” Free forever.</p>
+    </div>
+    <form class="join-form" onsubmit="event.preventDefault(); this.querySelector('button').textContent='Welcome aboard ⚓'; this.querySelector('input').value='';">
+      <input type="email" required placeholder="you@yourboat.com" aria-label="Email address" />
+      <button type="submit" class="btn btn-primary">Sign me up</button>
+    </form>
+    <p class="join-fine">Already 14,217 sailors. We'll never sell your address. Unsubscribe in one click.</p>
+  </div>
+</section>
+
+<!-- ──────────────────  FOOTER  ────────────────── -->
+<footer class="footer">
+  <div class="foot-grid">
+    <div class="foot-col foot-brand">
+      <a href="#top" class="brand">
+        <svg class="brand-mark" viewBox="0 0 36 36" aria-hidden="true">
+          <circle cx="18" cy="18" r="15" fill="none" stroke="currentColor" stroke-width="1.4"/>
+          <path d="M18 6 L18 30" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+          <path d="M6 18 L30 18" stroke="currentColor" stroke-width="0.8" opacity="0.5"/>
+          <path d="M18 8 L26 26 L10 26 Z" fill="currentColor" opacity="0.85"/>
+        </svg>
+        <span class="brand-text">Good Old Boat <em class="brand-ver">2.0</em></span>
+      </a>
+      <p>The modern continuation of the magazine sailors grew up reading. For the people who'd rather refit than replace.</p>
+    </div>
+
+    <div class="foot-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="#">The First Sail</a></li>
+        <li><a href="#">Coastal Cruiser</a></li>
+        <li><a href="#">The Long Passage</a></li>
+        <li><a href="#">Restoration & Refit</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4>Reference</h4>
+      <ul>
+        <li><a href="#glossary">Glossary</a></li>
+        <li><a href="#">Knots, animated</a></li>
+        <li><a href="#">Boat anatomy</a></li>
+        <li><a href="#">Weather primers</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4>The dispatch</h4>
+      <ul>
+        <li><a href="#">Latest letter</a></li>
+        <li><a href="#">Long reads</a></li>
+        <li><a href="#">Refit journals</a></li>
+        <li><a href="#">RSS</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">The editors</a></li>
+        <li><a href="#">Our promise</a></li>
+        <li><a href="#">Write for us</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© 2026 Good Old Boat 2.0 · A modern continuation of the original magazine.</span>
+    <span class="foot-bar-right">
+      <a href="#">Privacy</a><span>·</span><a href="#">Terms</a><span>·</span><a href="#">Colophon</a>
+    </span>
+  </div>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>

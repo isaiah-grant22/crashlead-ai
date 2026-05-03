@@ -1,0 +1,6 @@
+{
+  "framework": null,
+  "buildCommand": "mkdir -p _site && cp -r sailing/* _site/",
+  "outputDirectory": "_site",
+  "installCommand": null
+}
